@@ -1,5 +1,3 @@
-import unittest
-
 
 def print_color_map():
     major_colors = ["White", "Red", "Black", "Yellow", "Violet"]
@@ -18,5 +16,4 @@ assert (colorCode[str({"Black"} | {"Slate"})] == 22)
 print("All is well (maybe!)\n")
 print()
 
-if __name__ == '__main__':
-    unittest.main()
+
