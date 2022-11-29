@@ -1,13 +1,22 @@
+import unittest
+colorCode = {}
 
-def print_color_map():
-    major_colors = ["White", "Red", "Black", "Yellow", "Violet"]
-    minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
-    for i, major in enumerate(major_colors):
-        for j, minor in enumerate(minor_colors):
-            print(f'{i * 5 + j} | {major} | {minor}')
-    return len(major_colors) * len(minor_colors)
+class misaligned:
+    def print_color_map():
+        major_colors = ["White", "Red", "Black", "Yellow", "Violet"]
+        minor_colors = ["Blue", "Orange", "Green", "Brown", "Slate"]
+        for i, major in enumerate(major_colors):
+            for j, minor in enumerate(minor_colors):
+                print(f'{i * 5 + j} | {major} | {minor}')
+                colorCode[str({major} | {minor})] = i * 5 + j
+        return len(major_colors) * len(minor_colors)
+    
+    result = print_color_map()
+    assert(result == 25)
+    assert (colorCode[str({"Red"} | {"Orange"})] == 7)
+    assert (colorCode[str({"Violet"} | {"Green"})] == 22)
+    print("All is well (maybe!)\n")
+    print()
 
-
-result = print_color_map()
-assert(result == 25)
-print("All is well (maybe!)\n")
+if __name__ == '__main__':
+    unittest.main()
