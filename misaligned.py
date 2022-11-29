@@ -13,8 +13,8 @@ class misaligned:
     
     result = print_color_map()
     assert(result == 25)
-    assert (colorCode[str({"Red"} | {"Orange"})] == 7)
-    assert (colorCode[str({"Violet"} | {"Green"})] == 22)
+    assert (colorCode[str({"White"} | {"Brown"})] == 7)
+    assert (colorCode[str({"Black"} | {"Slate"})] == 22)
     print("All is well (maybe!)\n")
     print()
 
